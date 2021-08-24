@@ -1,4 +1,11 @@
-public class HttpConnection {
+package edu.escuelaing.arep.sparkherokulive;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.*;
+import java.net.*
+
+public class HttpConnectionExample {
 
     private static final String USER_AGENT = "Mozilla/5.0";
     private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=fb&apikey=XXXXXXXXXXX";
