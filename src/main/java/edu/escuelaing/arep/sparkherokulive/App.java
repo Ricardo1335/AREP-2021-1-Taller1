@@ -1,7 +1,8 @@
 package edu.escuelaing.arep.sparkherokulive;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static spark.Spark.*;
 import spark.Request;
 import spark.Response;
@@ -64,7 +65,7 @@ public class App
     private static String facadeAlpha(Request req, Response res) {
         String response = "None";
         try {
-            response = HttpConnection.alphaTimeSeriesDaily();
+            response = CurrentServiceInstance.getInstance().getService().TimeSeriesDaily();
         }catch(IOException ex){
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }

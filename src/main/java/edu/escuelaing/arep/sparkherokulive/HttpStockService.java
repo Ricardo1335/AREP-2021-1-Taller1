@@ -3,16 +3,15 @@ package edu.escuelaing.arep.sparkherokulive;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.*;
-import java.net.*
+import java.net.*;
 
-public class HttpConnectionExample {
+public abstract class HttpStockService {
 
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=fb&apikey=XXXXXXXXXXX";
 
-    public static String alphaTimeSeriesDaily() throws IOException {
+    public String TimeSeriesDaily() throws IOException {
         String responseStr = "None";
-        URL obj = new URL(GET_URL);
+        URL obj = new URL(getURL());
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -40,6 +39,8 @@ public class HttpConnectionExample {
         }
         System.out.println("GET DONE");
         return responseStr;
+        
     }
-
+    abstract public String getURL();
+    abstract public void setStock(String stock);
 } 
