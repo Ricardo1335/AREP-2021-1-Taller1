@@ -3,9 +3,7 @@ package edu.escuelaing.arep.sparkherokulive;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static spark.Spark.*;
-import spark.Request;
-import spark.Response;
+
 
 
 /**/
